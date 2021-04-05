@@ -19,7 +19,7 @@
 package types
 
 import (
-	"github.com/onflow/flow-go/fvm"
+	fvm "github.com/onflow/flow-go/fvm/errors"
 )
 
 type FlowError struct {

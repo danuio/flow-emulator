@@ -20,7 +20,6 @@ package sdk
 
 import (
 	"fmt"
-	"github.com/onflow/flow-go/fvm"
 
 	"github.com/onflow/cadence"
 	jsoncdc "github.com/onflow/cadence/encoding/json"
@@ -253,7 +252,7 @@ func FlowSignAlgoToSDK(signAlgo flowcrypto.SigningAlgorithm) sdkcrypto.Signature
 }
 
 func SDKSignAlgoToFlow(signAlgo sdkcrypto.SignatureAlgorithm) flowcrypto.SigningAlgorithm {
-	return fvm.StringToSigningAlgorithm(signAlgo.String())
+	return stringToSigningAlgorithm(signAlgo.String())
 }
 
 func flowhashAlgoToSDK(hashAlgo flowhash.HashingAlgorithm) sdkcrypto.HashAlgorithm {
@@ -261,7 +260,7 @@ func flowhashAlgoToSDK(hashAlgo flowhash.HashingAlgorithm) sdkcrypto.HashAlgorit
 }
 
 func SDKHashAlgoToFlow(hashAlgo sdkcrypto.HashAlgorithm) flowhash.HashingAlgorithm {
-	return fvm.StringToHashingAlgorithm(hashAlgo.String())
+	return stringToHashingAlgorithm(hashAlgo.String())
 }
 
 func FlowAccountPublicKeyToSDK(flowPublicKey flowgo.AccountPublicKey, index int) (sdk.AccountKey, error) {
